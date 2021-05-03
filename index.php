@@ -15,7 +15,7 @@ header("Referrer-Policy: no-referrer");
  */
 $cardName = ["Feasting Troll King", "Embercleave", "Kenrith, the Returned King", "Brazen Borrower", "Ayara, First of Locthwain", "Questing Beast", "Linden, the Steadfast Queen", "Stolen by the Fae", "Witch's Vengeance", "Torbran, Thane of Red Fell"];
 $color = ["Green", "Red", "White", "Blue", "Black", "Green", "White", "Blue", "Black", "Red"];
-$released_at = ["January", "February", "December", "April", "January", "February", "February", "December", "July", "2019-01-23"];
+$released_at = ["January", "February", "December", "April", "January", "February", "February", "December", "July", "July"];
 $lang = ["en", "en", "en", "en", "en", "en", "en", "en", "en", "en"];
 $image = [
     "https://media.wizards.com/2019/eld/en_vsxkO1cHgt.png",
