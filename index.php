@@ -15,7 +15,7 @@ header("Referrer-Policy: no-referrer");
  */
 $cardName = ["Feasting Troll King", "Embercleave", "Kenrith, the Returned King", "Brazen Borrower", "Ayara, First of Locthwain", "Questing Beast", "Linden, the Steadfast Queen", "Stolen by the Fae", "Witch's Vengeance", "Torbran, Thane of Red Fell"];
 $color = ["Green", "Red", "White", "Blue", "Black", "Green", "White", "Blue", "Black", "Red"];
-$released_at = ["2021-01-23", "2020-05-15", "2019-01-23", "2018-05-15", "2017-01-23", "2017-01-23", "2021-01-23", "2020-05-15", "2019-01-23"];
+$released_at = ["January", "February", "December", "April", "January", "February", "February", "December", "July", "2019-01-23"];
 $lang = ["en", "en", "en", "en", "en", "en", "en", "en", "en", "en"];
 $image = [
     "https://media.wizards.com/2019/eld/en_vsxkO1cHgt.png",
@@ -33,11 +33,6 @@ $image = [
 $cards = array();
 
 for ($i = 0; $i < 10; $i++) {
-    // $cardName = $cardName;
-    // $color = $color;
-    // $released_at = $released_at;
-    // $lang = $lang;
-    // $image = $image;
 
     $card = array(
         "cardname" => $cardName[$i],
@@ -48,6 +43,9 @@ for ($i = 0; $i < 10; $i++) {
     );
     array_push($cards, $card);
 }
+
+
+
 
 /**
  * Convert array to json
