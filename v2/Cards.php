@@ -8,7 +8,7 @@ class Cards
     private $cardName;
     private $color;
     private $released_at;
-    private $lang;
+    private $language;
     private $category;
     private $image;
 
@@ -16,12 +16,12 @@ class Cards
     /**
      * Constructor
      */
-    public function __construct($cardName, $color, $released_at, $lang, $category, $image)
+    public function __construct($cardName, $color, $released_at, $language, $category, $image)
     { {
             $this->cardName = $cardName;
             $this->color = $color;
             $this->released_at = $released_at;
-            $this->lang = $lang;
+            $this->language = $language;
             $this->category = $category;
             $this->image = $image;
         }
@@ -37,7 +37,7 @@ class Cards
             "cardname"      => $this->cardName,
             "color"         => $this->color,
             "released_at"   => $this->released_at,
-            "lang"          => $this->lang,
+            "language"      => $this->language,
             "category"      => $this->category,
             "image"         => $this->image
         );

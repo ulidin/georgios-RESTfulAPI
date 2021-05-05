@@ -23,7 +23,7 @@ include('./cardsArrays.php');
 
 $limit = isset($_GET["show"]) ? $_GET["show"] : 20;
 
-$card_category = isset($_GET["category"]) ? $_GET["category"] : "";
+$card_category = isset($_GET["category"]) ? $_GET["category"] : '';
 
 $cards = array();
 
@@ -33,16 +33,19 @@ for ($i = 0; $i < $limit; $i++) {
         $cardName[$i],
         $color[$i],
         $released_at[$i],
-        $lang[$i],
+        $language[$i],
         $category[$i],
         $image[$i]
     );
 
-    array_push($cards, $card->toArray());
+    if ($card_category == $category[$i]) {
+        array_push($cards, $card->toArray());
+    }
 }
 
 
-shuffle($cards);
+
+// shuffle($cards);
 
 
 echo json_encode($cards, JSON_UNESCAPED_UNICODE);

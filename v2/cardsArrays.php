@@ -22,7 +22,7 @@ $released_at = [
     "October", "October", "June", "June", "June"
 ];
 
-$lang = [
+$language = [
     "english", "english", "english", "english", "english",
     "english", "english", "english", "english", "english",
     "english", "english", "english", "english", "english",
