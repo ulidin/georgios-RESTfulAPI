@@ -30,8 +30,8 @@ $card_category = isset($_GET["category"]) ? $_GET["category"] : '';
 $errors = array();
 
 // Runtime exception
-if ($limit > count($cardName)) {
-    $err = new Error_display("You have chosen to show too many cards or using wrong characters");
+if ($limit > count($cardName) || $limit < 1) {
+    $err = new Error_display("You have chosen to show too many or too few cards or using wrong characters");
     array_push($errors, $err->toArray());
 }
 
