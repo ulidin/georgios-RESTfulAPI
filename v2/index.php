@@ -18,6 +18,7 @@ header("Access-Control-Allow-Headers: Origin, X-Requested-With, Content-Type, Ac
 header("Referrer-Policy: no-referrer");
 
 include('./Cards.php');
+include('./Error_display.php');
 include('./cardsArrays.php');
 
 
@@ -26,9 +27,21 @@ $limit = isset($_GET["show"]) ? $_GET["show"] : 20;
 $card_category = isset($_GET["category"]) ? $_GET["category"] : '';
 
 
+$errors = array();
+
 // Runtime exception
 if ($limit > count($cardName)) {
-    echo "Fel";
+    $err = new Error_display("You have chosen to show too many cards");
+    array_push($errors, $err->toArray());
+}
+
+if (!empty($card_category) && !in_array($card_category, $category, true)) {
+    $err = new Error_display("You have chosen wrong category");
+    array_push($errors, $err->toArray());
+}
+
+if (count($errors) > 0) {
+    echo json_encode($errors, JSON_UNESCAPED_UNICODE);
     die();
 }
 
