@@ -17,15 +17,15 @@ class Cards
      * Constructor
      */
     public function __construct($cardName, $color, $released_at, $language, $category, $image)
-    { {
-            $this->cardName = $cardName;
-            $this->color = $color;
-            $this->released_at = $released_at;
-            $this->language = $language;
-            $this->category = $category;
-            $this->image = $image;
-        }
+    {
+        $this->cardName = $cardName;
+        $this->color = $color;
+        $this->released_at = $released_at;
+        $this->language = $language;
+        $this->category = $category;
+        $this->image = $image;
     }
+
 
 
     /**

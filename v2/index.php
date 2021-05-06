@@ -25,9 +25,17 @@ $limit = isset($_GET["show"]) ? $_GET["show"] : 20;
 
 $card_category = isset($_GET["category"]) ? $_GET["category"] : '';
 
+
+// Runtime exception
+if ($limit > count($cardName)) {
+    echo "Fel";
+    die();
+}
+
+
 $cards = array();
 
-for ($i = 0; $i < $limit; $i++) {
+for ($i = 0; $i < count($cardName); $i++) {
 
     $card = new Cards(
         $cardName[$i],
@@ -38,14 +46,19 @@ for ($i = 0; $i < $limit; $i++) {
         $image[$i]
     );
 
-    if ($card_category == $category[$i]) {
+    if ($card_category === $category[$i]) {
+        array_push($cards, $card->toArray());
+    } elseif (empty($card_category)) {
         array_push($cards, $card->toArray());
     }
 }
 
 
+shuffle($cards);
 
-// shuffle($cards);
+if (count($cards) > $limit) {
+    $cards = array_slice($cards, 0, $limit);
+}
 
 
 echo json_encode($cards, JSON_UNESCAPED_UNICODE);
