@@ -31,7 +31,7 @@ $errors = array();
 
 // Runtime exception
 if ($limit > count($cardName)) {
-    $err = new Error_display("You have chosen to show too many cards");
+    $err = new Error_display("You have chosen to show too many cards or using wrong characters");
     array_push($errors, $err->toArray());
 }
 
